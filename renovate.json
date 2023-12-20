@@ -1,0 +1,34 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      ":ignoreUnstable",
+      ":enableVulnerabilityAlertsWithLabel(security)",
+      "helpers:pinGitHubActionDigests",
+      ":dependencyDashboard"
+    ],
+    "assigneesFromCodeOwners": true,
+    "labels": [
+      "renovate"
+    ],
+    "ignoreDeps": [],
+    "ignorePaths": [],
+    "rebaseWhen": "never",
+    "prConcurrentLimit": 4,
+    "packageRules": [
+      {
+        "groupName": "Github Action",
+        "groupSlug": "github-action",
+        "automerge": false,
+        "matchManagers": [
+          "github-actions"
+        ],
+        "addLabels": [
+          "github-actions"
+        ],
+        "matchPackagePatterns": [
+          "*"
+        ]
+      }
+    ]
+  }
+  
